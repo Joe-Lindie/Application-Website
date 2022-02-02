@@ -174,6 +174,8 @@ button:hover,
   border: 0.5px solid gray;
   border-radius: 5px;
   padding-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 .container-carousel .carousel-item,

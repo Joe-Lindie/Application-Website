@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Meta Data -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="Joe Lindie" />
+    <meta
+      name="description"
+      content="This is an application website to the Founders and Coders web development programme"
+    />
+    <!-- Mobile Specific -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon Icon next to title -->
+    <link rel="icon" href="Images/Favicon.png" />
+
+    <!-- Link to CSS stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Social Media Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <title>Founders & Coders Application Website</title>
+  </head>
+  <body>
+    <!-- Navigation Bar-->
+
+    <nav id="nav-item" class="nav-list">
+      <img
+        class="hamburger"
+        id="hamburger"
+        src="Images/hamburger.png"
+        alt=""
+        aria-hidden="true"
+      />
+
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="whyme.html">Why Me?</a></li>
+        <li><a href="myprojects.html">My Projects</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Introduction / Header -->
+
+    <header>
+      <h1>Founders & Coders Application</h1>
+      <p class="intro">
+        Hi, I'm Joe! Welcome to my Founders & Coders application website!
+      </p>
+      <img class="Img-Joe" src="Images/me.jpeg" alt="" />
+    </header>
+
+    <!-- Greet user / prompt for name -->
+
+    <form class="greet-user">
+      <p>What's your name?</p>
+      <input type="text" id="input" placeholder="Dwayne Johnson..." />
+      <button id="button">Click Me</button>
+
+      <a href="whyme.html"><p id="greet"></p></a>
+    </form>
+
+    <!-- Footer Section with social links-->
+
+    <footer>
+      &copy; Designed and coded by Joe Lindie
+      <a href="https://github.com" target="_blank" class="fa fa-github"></a>
+      <a href="https://codepen.io" target="_blank" class="fa fa-codepen"></a>
+    </footer>
+
+    <script src="application.js" defer></script>
+  </body>
+</html>

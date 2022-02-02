@@ -1,0 +1,254 @@
+/* Basic Styling */
+html {
+  box-sizing: border-box;
+  height: 100vh;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/* Website color scheme */
+:root {
+  --Primary1: #d7cec7;
+  --Spare-color: #c09f80;
+  --text-color: #565656;
+  --hover-color: #76323f;
+}
+
+body {
+  background-color: var(--Primary1);
+  font-family: "Open Sans", sans-serif;
+}
+
+h1 {
+  color: var(--hover-color);
+  text-align: center;
+  padding: 0 0 2rem 0;
+  font-weight: 500;
+}
+
+p {
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 2rem;
+  padding: 10px 30px 10px 30px;
+  color: var(--text-color);
+  text-align: justify;
+}
+
+/* NavBar for Mobile*/
+.hamburger {
+  cursor: pointer;
+  padding: 1rem;
+}
+
+#nav-item li {
+  display: none;
+}
+
+#nav-item.show li {
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+  padding: 1rem;
+}
+
+/*Nav Items in Hover State*/
+.nav-list a:hover {
+  color: var(--hover-color);
+  background-color: var(--Spare-color);
+  border-radius: 20px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+/*NavBar for Desktop*/
+@media (min-width: 750px) {
+  .hamburger {
+    display: none;
+  }
+
+  .nav-list ul {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem 1rem 3rem 1rem;
+  }
+
+  #nav-item li {
+    display: block;
+  }
+}
+/*Homepage layout (index.html)*/
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.intro {
+  text-align: center;
+}
+
+.Img-Joe {
+  border-radius: 50%;
+  width: 150px;
+}
+
+.greet-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.greet-user input {
+  width: 300px;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+  border: 0.5px solid var(--Spare-color);
+}
+
+/*Removes placeholder when clicked*/
+input:focus::placeholder {
+  color: transparent;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--Spare-color);
+  color: var(--hover-color);
+}
+
+button:hover,
+.greet-user input:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/*Why Me Page*/
+
+.text-design-link {
+  padding: 0;
+}
+
+.text-design-link:hover {
+  color: var(--hover-color);
+  font-weight: bold;
+}
+
+/*Media Query for the Why Me page - Desktop view*/
+@media (min-width: 750px) {
+  p {
+    margin: 0 15rem 0 15rem;
+  }
+}
+
+/*Image-Slider - My Projects Page*/
+
+.center-container {
+  display: flex;
+  justify-content: center;
+}
+
+.container-carousel {
+  overflow: hidden;
+  max-width: 600px;
+  position: relative;
+  border: 0.5px solid gray;
+  border-radius: 5px;
+  padding-bottom: 20px;
+}
+
+.container-carousel .carousel-item,
+.container-carousel .carousel-item-hidden {
+  display: none;
+}
+
+.container-carousel .carousel-item img {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+}
+
+.container-carousel .carousel-item-visible {
+  display: block;
+}
+
+.container-carousel .carousel-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.container-carousel .carousel-buttons button {
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: auto;
+}
+
+.container-carousel .carousel-buttons #carousel-button-prev {
+  margin-left: 10px;
+}
+
+.container-carousel .carousel-buttons #carousel-button-next {
+  margin-right: 10px;
+}
+
+.container-carousel .carousel-item .website-buttons a {
+  padding: 5px;
+  margin-left: 10px;
+  border: 0.5px solid var(--text-color);
+  border-radius: 20px;
+}
+
+.container-carousel .carousel-item .website-buttons a:hover {
+  background-color: var(--Spare-color);
+  color: var(--hover-color);
+  font-weight: bold;
+}
+
+.container-carousel .carousel-item .website-buttons p {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 10px;
+  margin-left: 10px;
+}
+
+/*Footer Section*/
+
+footer {
+  color: var(--text-color);
+  background-color: var(--Spare-color);
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  font-size: 10px;
+  padding: 0.2rem;
+}
+
+footer a {
+  padding: 0;
+  padding-left: 10px;
+}

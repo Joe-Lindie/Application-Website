@@ -1,7 +1,6 @@
 /* Basic Styling */
 html {
   box-sizing: border-box;
-  height: 100vh;
 }
 *,
 *:before,
@@ -22,17 +21,20 @@ html {
 body {
   background-color: var(--Primary1);
   font-family: "Open Sans", sans-serif;
+  position: relative;
+  min-height: 100vh;
 }
 
 h1 {
   color: var(--hover-color);
   text-align: center;
-  padding: 0 0 2rem 0;
+  padding: 5rem 0 2rem 0;
   font-weight: 500;
 }
 
-p {
-  font-size: 1.1rem;
+p,
+h2 {
+  font-size: 1rem;
   font-weight: 300;
   line-height: 2rem;
   padding: 10px 30px 10px 30px;
@@ -40,7 +42,12 @@ p {
   text-align: justify;
 }
 
+h2 {
+  text-align: center;
+}
+
 /* NavBar for Mobile*/
+
 .hamburger {
   cursor: pointer;
   padding: 1rem;
@@ -53,21 +60,22 @@ p {
 #nav-item.show li {
   display: flex;
   justify-content: center;
+  padding-bottom: 1rem;
 }
 
 a {
   text-decoration: none;
   color: var(--text-color);
-  padding: 1rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 /*Nav Items in Hover State*/
 .nav-list a:hover {
   color: var(--hover-color);
-  background-color: var(--Spare-color);
+  background-color: var(--Primary1);
   border-radius: 20px;
-  padding-bottom: 5px;
-  padding-top: 5px;
+  padding: 5px 5px;
 }
 
 /*NavBar for Desktop*/
@@ -79,7 +87,11 @@ a {
   .nav-list ul {
     display: flex;
     justify-content: flex-end;
-    padding: 1rem 1rem 3rem 1rem;
+    padding: 0.5rem;
+    background-color: var(--Spare-color);
+    position: fixed;
+    top: 0;
+    width: 100%;
   }
 
   #nav-item li {
@@ -91,10 +103,6 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.intro {
-  text-align: center;
 }
 
 .Img-Joe {
@@ -134,6 +142,7 @@ button {
   border-radius: 10px;
   background-color: var(--Spare-color);
   color: var(--hover-color);
+  margin-bottom: 3rem;
 }
 
 button:hover,
@@ -146,6 +155,8 @@ button:hover,
 
 .text-design-link {
   padding: 0;
+  color: var(--hover-color);
+  font-weight: 400;
 }
 
 .text-design-link:hover {
@@ -154,9 +165,10 @@ button:hover,
 }
 
 /*Media Query for the Why Me page - Desktop view*/
-@media (min-width: 750px) {
-  p {
-    margin: 0 15rem 0 15rem;
+@media (min-width: 950px) {
+  p,
+  h2 {
+    margin: 0 10rem 0 10rem;
   }
 }
 
@@ -243,9 +255,9 @@ button:hover,
 footer {
   color: var(--text-color);
   background-color: var(--Spare-color);
-  width: 100%;
-  position: fixed;
+  position: absolute;
   bottom: 0;
+  width: 100%;
   font-size: 10px;
   padding: 0.2rem;
 }

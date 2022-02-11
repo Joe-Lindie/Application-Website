@@ -13,15 +13,14 @@ const button = document.getElementById("button");
 const greet = document.getElementById("greet");
 
 
-button.addEventListener ("click", greetingUser);
+button.addEventListener("click", function greetingUser(event) {
 
-function greetingUser(event) {
   event.preventDefault(); // Does not send/submit form tag in index.html page
 
   if(input.value === "") { //if the user enters an Empty string
-    alert("Oops, I'm Joe. Who are you?");
+    alert("Oops, I'm Joe. What's your name?");
   } else {
     greet.textContent = `Nice to meet you, ${input.value}! 
     Click me to find out more`
   }
-}
+});

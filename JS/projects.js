@@ -51,9 +51,9 @@ function moveToPreviousSlide() {
 
 // Likes Conter - Thumbs up/down My Projects Page
 
-const thumbsDown = document.getElementById("thumbs-down")
-const thumbsUp = document.getElementById("thumbs-up")
-const numOfLikes =document.getElementById ("num-of-likes")
+const thumbsDown = document.querySelector(".fa-thumbs-down")
+const thumbsUp = document.querySelector(".fa-thumbs-up")
+const numOfLikes = document.querySelector(".num-of-likes")
 
 let count = 0; // initialise the likes at zero 
 

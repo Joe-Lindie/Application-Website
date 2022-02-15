@@ -174,100 +174,85 @@ button:hover,
 
 /*Image-Slider - My Projects Page*/
 
-.center-container {
+.centre-container {
   display: flex;
   justify-content: center;
 }
 
-.container-carousel {
+.slider-container {
   overflow: hidden;
-  max-width: 600px;
+  width: 600px; /* Set size of container*/
+  height: 400px;
   position: relative;
   border: 0.5px solid gray;
   border-radius: 5px;
-  padding-bottom: 20px;
   margin-top: 20px;
-  margin-bottom: 40px;
 }
 
-.container-carousel .carousel-item .thumbs-buttons {
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s ease-in-out;
+}
+
+.slide img {
+  object-fit: fill;
+  max-width: 100%;
+  height: 400px; /* Same height as image container*/
+  opacity: 0.8;
+}
+
+.Image-info {
   display: flex;
-  justify-content: flex-end;
-  padding-right: 1rem;
+  position: absolute;
+  bottom: 0px;
+  background-color: var(--Spare-color);
+  width: 100%;
+}
+
+.Image-info button {
+  margin-left: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 0.5px solid var(--text-color);
+  background-color: var(--Primary1);
   cursor: pointer;
 }
 
-.thumbs-buttons .fa-thumbs-up {
-  padding-left: 1rem;
+.Image-info-container a {
+  padding: 0;
 }
 
-.container-carousel .carousel-item .num-of-likes {
-  display: flex;
-  justify-content: flex-end;
-  color: var(--text-color);
-  font-size: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.5rem;
-}
-
-.container-carousel .carousel-item,
-.container-carousel .carousel-item-hidden {
-  display: none;
-}
-
-.container-carousel .carousel-item img {
-  max-width: 600px;
-  width: 100%;
-  height: auto;
-}
-
-.container-carousel .carousel-item-visible {
-  display: block;
-}
-
-.container-carousel .carousel-buttons {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.container-carousel .carousel-buttons button {
-  background-color: var(--text-color);
-  color: white;
-}
-
-.container-carousel .carousel-buttons button:hover {
-  color: var(--hover-color);
-}
-
-.container-carousel .carousel-buttons #carousel-button-prev {
-  margin-left: 10px;
-}
-
-.container-carousel .carousel-buttons #carousel-button-next {
-  margin-right: 10px;
-}
-
-.container-carousel .carousel-item .website-buttons a {
-  padding: 5px;
-  margin-left: 10px;
-  border: 0.5px solid var(--text-color);
-  border-radius: 20px;
-}
-
-.container-carousel .carousel-item .website-buttons a:hover {
-  background-color: var(--Spare-color);
-  color: var(--hover-color);
+.Image-info p {
+  margin-left: 0.5rem;
+  padding: 0;
   font-weight: bold;
 }
 
-.container-carousel .carousel-item .website-buttons p {
-  margin: 0;
-  padding: 0;
-  margin-left: 10px;
+.thumbs-buttons,
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.btn-container button {
+  margin-top: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  border: 0.5px solid var(--text-color);
+  color: var(--text-color);
+  background-color: transparent;
+}
+
+.thumbs-buttons .fa,
+.num-of-likes {
+  padding: 0.5rem;
+  margin-bottom: 3rem;
+  font-size: 1rem;
+  color: var(--text-color);
 }
 
 /*Footer Section*/

@@ -1,75 +1,64 @@
-// slides - My Projects page
+const slides = document.querySelectorAll(".slide");
+const nextButton = document.querySelector(".carousel-button-next");
+const prevButton = document.querySelector(".carousel-button-prev");
 
-const slides = document.getElementsByClassName('carousel-item'); 
-const carouselButtonNext = document.getElementById("carousel-button-next");
-const carouselButtonPrev = document.getElementById("carousel-button-prev");
+// Gives node-list of all slides
+slides.forEach(function (slide, index) {
+  slide.style.left = `${index * 100}%`;
+});
 
+// Functions -  Next button/Previous button
 
-let slidePosition = 0; 
-const totalSlides = slides.length;
+let slideCounter = 0;
 
-carouselButtonNext.addEventListener ('click', () => moveToNextSlide());
-carouselButtonPrev.addEventListener ('click', () => moveToPreviousSlide());
+nextButton.addEventListener("click", function () {
+  slideCounter++;
+  imageCarousel();
+});
 
-// Function to update slides
-function updateSlide() {
+prevButton.addEventListener("click", function () {
+  slideCounter--;
+  imageCarousel();
+});
 
-  for (let slide of slides) { // loops through object values
-
-    slide.classList.remove ('carousel-item-visible');
-    slide.classList.add('carousel-item-hidden');
-
-  }
-  slides[slidePosition].classList.add ('carousel-item-visible');
-  //when carousel items visable / call likes() and dislikes()
- 
-}
-
-// Function to move to next slide
-function moveToNextSlide() {
-
-  if (slidePosition === totalSlides - 1) {
-    slidePosition = 0;
+// imageCarousel function
+function imageCarousel() {
+  // slides functionality remove/add slide buttons
+  if (slideCounter < slides.length - 1) {
+    nextButton.style.display = "block";
   } else {
-  slidePosition++;
+    nextButton.style.display = "none";
   }
-  updateSlide()
-}
 
-// Function to move to previous slide
-function moveToPreviousSlide() {
-
-  if (slidePosition === 0) {
-    slidePosition = totalSlides - 1;
+  if (slideCounter > 0) {
+    prevButton.style.display = "block";
   } else {
-  slidePosition--;
+    prevButton.style.display = "none";
   }
 
-  updateSlide()
- 
+  slides.forEach(function (slide) {
+    slide.style.transform = `translateX(-${slideCounter * 100}%)`;
+  });
 }
+prevButton.style.display = "none";
 
 // Likes Conter - Thumbs up/down My Projects Page
 
-const thumbsDown = document.querySelector(".fa-thumbs-down")
-const thumbsUp = document.querySelector(".fa-thumbs-up")
-const numOfLikes = document.querySelector(".num-of-likes")
+const thumbsDown = document.querySelector(".fa-thumbs-down");
+const thumbsUp = document.querySelector(".fa-thumbs-up");
+const numOfLikes = document.querySelector(".num-of-likes");
 
-let count = 0; // initialise the likes at zero 
+let count = 0; // initialise the likes at zero
 
-thumbsUp.addEventListener('click',  () => likes())
-thumbsDown.addEventListener('click', () => dislikes())
+thumbsUp.addEventListener("click", () => likes());
+thumbsDown.addEventListener("click", () => dislikes());
 
 function likes() {
-
-  count  += 1
-  numOfLikes.textContent = count; 
-
+  count += 1;
+  numOfLikes.textContent = count;
 }
 
-  function dislikes() {
-
-   count  -= 1
-   numOfLikes.textContent = count; 
- 
-  }
+function dislikes() {
+  count -= 1;
+  numOfLikes.textContent = count;
+}

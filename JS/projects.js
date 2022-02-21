@@ -23,13 +23,14 @@ prevButton.addEventListener("click", function () {
 
 // imageCarousel function
 function imageCarousel() {
-  // slides functionality remove/add slide buttons
+  // slides functionality next button removed.
   if (slideCounter < slides.length - 1) {
     nextButton.style.display = "block";
   } else {
     nextButton.style.display = "none";
   }
 
+  // slides functionality prev button removed.
   if (slideCounter > 0) {
     prevButton.style.display = "block";
   } else {
@@ -48,7 +49,7 @@ const thumbsDown = document.querySelector(".fa-thumbs-down");
 const thumbsUp = document.querySelector(".fa-thumbs-up");
 const numOfLikes = document.querySelector(".num-of-likes");
 
-let count = 0; // initialise the likes at zero
+let count = 0;
 
 thumbsUp.addEventListener("click", () => likes());
 thumbsDown.addEventListener("click", () => dislikes());
@@ -61,4 +62,30 @@ function likes() {
 function dislikes() {
   count -= 1;
   numOfLikes.textContent = count;
+}
+
+// Comment Box My Projects Page
+
+const commentBoxStr = document.getElementById("comment-box");
+const commentBtn = document.getElementById("comment-button");
+const comments = document.getElementById("comments");
+
+commentBtn.addEventListener("click", () => leaveComment());
+
+/* use .createElement(), .createTextNode(). and .appendChild()*/
+
+function leaveComment() {
+  if (commentBoxStr.value == "") {
+    //if the user enters an Empty string
+    alert("Don't forget to write something!");
+  } else {
+    const newList = document.createElement("li");
+    const newContent = document.createTextNode(commentBoxStr.value);
+
+    newList.appendChild(newContent);
+    comments.appendChild(newList);
+
+    console.log(newList);
+    console.log(newContent);
+  }
 }

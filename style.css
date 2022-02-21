@@ -10,7 +10,7 @@ html {
   padding: 0;
 }
 
-/* Website color scheme */
+/* Website Color Scheme */
 :root {
   --Primary1: #d7cec7;
   --Spare-color: #c09f80;
@@ -37,7 +37,7 @@ h2 {
   font-size: 1rem;
   font-weight: 300;
   line-height: 2rem;
-  padding: 10px 30px 10px 30px;
+  padding: 10px 30px 30px 30px;
   color: var(--text-color);
   text-align: justify;
 }
@@ -68,7 +68,6 @@ a {
   text-decoration: none;
   color: var(--text-color);
   padding-right: 1rem;
-  padding-left: 1rem;
 }
 
 /*Nav Items in Hover State*/
@@ -111,13 +110,13 @@ header {
   width: 150px;
 }
 
-.greet-user {
+.input_text_design {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.greet-user input {
+.input_text_design input {
   width: 300px;
   padding: 5px;
   margin-bottom: 10px;
@@ -137,22 +136,40 @@ input:focus {
   outline: none;
 }
 
-button {
+/*All Website Buttons*/
+
+.btn-design button {
+  margin: 1rem 1rem 1rem 0;
   padding: 5px;
-  border: none;
   border-radius: 10px;
-  background-color: var(--Spare-color);
-  color: var(--hover-color);
-  margin-bottom: 3rem;
+  border: 0.5px solid var(--text-color);
+  color: var(--text-color);
+  background-color: transparent;
 }
 
 button:hover,
-.greet-user input:hover {
+.input_text_design input:hover {
   cursor: pointer;
   font-weight: bold;
 }
 
-/*Why Me Page*/
+.thumbs-buttons,
+.btn-design {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.thumbs-buttons .fa,
+.num-of-likes {
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+/*All Website Buttons End*/
+
+/*Why Me Page.html*/
 
 .text-design-link {
   padding: 0;
@@ -234,34 +251,7 @@ button:hover,
   font-weight: bold;
 }
 
-.thumbs-buttons,
-.btn-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-.btn-container button {
-  margin-top: 1rem;
-  margin-right: 1rem;
-  margin-bottom: 1rem;
-  font-size: 1rem;
-  border: 0.5px solid var(--text-color);
-  color: var(--text-color);
-  background-color: transparent;
-}
-
-.thumbs-buttons .fa,
-.num-of-likes {
-  padding: 0.5rem;
-  margin-bottom: 3rem;
-  font-size: 1rem;
-  color: var(--text-color);
-}
-
 /*Footer Section*/
-
 footer {
   color: var(--text-color);
   background-color: var(--Spare-color);

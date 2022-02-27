@@ -58,6 +58,7 @@ h2 {
   display: none;
 }
 
+/* show class from JS*/
 #nav-item.show li {
   display: flex;
   justify-content: center;
@@ -67,15 +68,18 @@ h2 {
 a {
   text-decoration: none;
   color: var(--text-color);
-  padding-right: 1rem;
+}
+
+ul li a {
+  margin-right: 1rem;
 }
 
 /*Nav Items in Hover State*/
 .nav-list a:hover {
   color: var(--hover-color);
   background-color: var(--Primary1);
-  border-radius: 20px;
-  padding: 5px 5px;
+  padding: 3px 5px;
+  border-radius: 1rem;
 }
 
 /*NavBar for Desktop*/
@@ -91,7 +95,6 @@ a {
     background-color: var(--Spare-color);
     position: fixed;
     z-index: 100; /* sets navbar to top*/
-    top: 0;
     width: 100%;
   }
 
@@ -232,18 +235,19 @@ button:hover,
   margin-bottom: 0.5rem;
 }
 .Image-info-container a {
-  padding: 3px;
+  padding: 3px 5px;
   margin-left: 0.5rem;
   border-radius: 1rem;
-  border: 1px solid var(--text-color);
-  background-color: var(--Primary1);
+  border: 0.5px solid var(--text-color);
+
   cursor: pointer;
   font-size: 0.8rem;
-  color: var(--hover-color);
+  color: var(--text-color);
 }
 
 .Image-info-container a:hover {
-  font-weight: bold;
+  color: var(--hover-color);
+  background-color: var(--Primary1);
 }
 
 .Image-info-container p {

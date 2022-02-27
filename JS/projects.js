@@ -70,10 +70,11 @@ function dislikes() {
 const commentBoxStr = document.getElementById("comment-box");
 const commentBtn = document.getElementById("comment-button");
 const comments = document.getElementById("comments");
+const remove = document.getElementById("remove");
 
 commentBtn.addEventListener("click", () => leaveComment());
 
-/* use .createElement(), .createTextNode(). and .appendChild()*/
+/* use .createElement(), .createTextNode(). and .prepend()*/
 
 function leaveComment() {
   if (commentBoxStr.value == "") {
@@ -82,13 +83,22 @@ function leaveComment() {
   } else {
     const newList = document.createElement("li");
     const newContent = document.createTextNode(commentBoxStr.value);
+    const date = new Date().toDateString();
 
     newList.prepend(newContent);
-    comments.prepend(newList);
-    // inserts string before first child.
-    // opposite to appendChild() - last child
+    comments.prepend(newList, date);
+    // inserts string before first child. - opposite to appendChild() - last child
 
     console.log(newList);
     console.log(newContent);
+  }
+
+  // if input string is NOT empty  == if input string is full
+  if (commentBoxStr.value !== "") {
+    remove.remove(); // removes placeholder 'No Comments..'
+  }
+  // clears user input str after btn clicked
+  if ((commentBtn.click = true)) {
+    commentBoxStr.value = "";
   }
 }

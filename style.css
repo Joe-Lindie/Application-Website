@@ -252,6 +252,20 @@ button:hover,
   font-weight: bold;
 }
 
+.comments_section {
+  border: 0.5px solid var(--text-color);
+  border-radius: 10px;
+  max-height: 150px;
+  overflow: hidden;
+}
+.comments_section p {
+  font-size: 0.7rem;
+}
+
+.btn-design #comment-button {
+  margin-bottom: 3rem;
+}
+
 /*Footer Section*/
 footer {
   color: var(--text-color);

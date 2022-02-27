@@ -6,6 +6,7 @@ const prevButton = document.querySelector(".carousel-button-prev");
 slides.forEach(function (slide, index) {
   slide.style.left = `${index * 100}%`;
 });
+//console.log(slides);
 
 // Functions -  Next button/Previous button
 
@@ -55,12 +56,12 @@ thumbsUp.addEventListener("click", () => likes());
 thumbsDown.addEventListener("click", () => dislikes());
 
 function likes() {
-  count += 1;
+  count += 1; // add one to count
   numOfLikes.textContent = count;
 }
 
 function dislikes() {
-  count -= 1;
+  count -= 1; // minus one from count
   numOfLikes.textContent = count;
 }
 
@@ -76,14 +77,16 @@ commentBtn.addEventListener("click", () => leaveComment());
 
 function leaveComment() {
   if (commentBoxStr.value == "") {
-    //if the user enters an Empty string
+    // if input string empty
     alert("Don't forget to write something!");
   } else {
     const newList = document.createElement("li");
     const newContent = document.createTextNode(commentBoxStr.value);
 
-    newList.appendChild(newContent);
-    comments.appendChild(newList);
+    newList.prepend(newContent);
+    comments.prepend(newList);
+    // inserts string before first child.
+    // opposite to appendChild() - last child
 
     console.log(newList);
     console.log(newContent);

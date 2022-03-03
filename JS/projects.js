@@ -65,40 +65,61 @@ function dislikes() {
   numOfLikes.textContent = count;
 }
 
-// Comment Box My Projects Page
+// Comment Box My Projects Page - START
 
 const commentBoxStr = document.getElementById("comment-box");
 const commentBtn = document.getElementById("comment-button");
 const comments = document.getElementById("comments");
-const remove = document.getElementById("remove");
+const dummyPlaceholder = document.getElementById("remove");
 
 commentBtn.addEventListener("click", () => leaveComment());
 
 /* use .createElement(), .createTextNode(). and .prepend()*/
 
-function leaveComment() {
+const leaveComment = () => {
   if (commentBoxStr.value == "") {
     // if input string empty
     alert("Don't forget to write something!");
   } else {
-    const newList = document.createElement("li");
-    const newContent = document.createTextNode(commentBoxStr.value);
-    const date = new Date().toDateString();
+    const newList = document.createElement("li"); //new list
+    const line = document.createElement("hr"); // new line
+    const deleteBtn = document.createElement("button"); //new button
+    deleteBtn.textContent = "Delete"; //button name
 
+    const newContent = document.createTextNode(
+      commentBoxStr.value + ` @${new Date().toLocaleTimeString()}`
+    );
     newList.prepend(newContent);
-    comments.prepend(newList, date);
+    comments.prepend(newList, deleteBtn, line);
     // inserts string before first child. - opposite to appendChild() - last child
 
-    console.log(newList);
-    console.log(newContent);
+    //console.log(newList);
+    console.log(typeof comments);
+
+    //event listener added for delete button to remove comments
+    deleteBtn.addEventListener("click", function deleteFn() {
+      if ((deleteBtn.click = true)) {
+        newList.remove();
+        line.remove();
+        deleteBtn.remove();
+        // console.log(currentTime);
+      }
+      if (deleteBtn.click === true) {
+        //adds dummy placeholder after deletebtn clicked
+        dummyPlaceholder.style.display = "block";
+      }
+    });
   }
 
-  // if input string is NOT empty  == if input string is full
+  // if input string is NOT empty = if input string is full
   if (commentBoxStr.value !== "") {
-    remove.remove(); // removes placeholder 'No Comments..'
+    //removes dummy placeholder 'No Comments..'
+    dummyPlaceholder.style.display = "none";
   }
-  // clears user input str after btn clicked
-  if ((commentBtn.click = true)) {
-    commentBoxStr.value = "";
-  }
-}
+
+  if (comments)
+    if ((commentBtn.click = true)) {
+      // clears user input str after btn clicked
+      commentBoxStr.value = "";
+    }
+};

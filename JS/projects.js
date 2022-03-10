@@ -1,24 +1,24 @@
 const slides = document.querySelectorAll(".slide");
 const nextButton = document.querySelector(".carousel-button-next");
 const prevButton = document.querySelector(".carousel-button-prev");
+console.log(slides); // Gives nodelist/array of all slides(0 index)
 
-// Gives node-list of all slides
 slides.forEach(function (slide, index) {
   slide.style.left = `${index * 100}%`;
+  //console.log(slide); //call back fn for each element in array
 });
-//console.log(slides);
 
 // Functions -  Next button/Previous button
 
 let slideCounter = 0;
 
 nextButton.addEventListener("click", function () {
-  slideCounter++;
+  slideCounter++; // increment slideCounter by 1
   imageCarousel();
 });
 
 prevButton.addEventListener("click", function () {
-  slideCounter--;
+  slideCounter--; //decrement slideCounter by 1
   imageCarousel();
 });
 
@@ -26,25 +26,27 @@ prevButton.addEventListener("click", function () {
 function imageCarousel() {
   // slides functionality next button removed.
   if (slideCounter < slides.length - 1) {
-    nextButton.style.display = "block";
+    console.log(slideCounter);
+    console.log(slides.length);
+    nextButton.style.display = "block"; //is displayed
   } else {
-    nextButton.style.display = "none";
+    nextButton.style.display = "none"; // not displayed
   }
 
   // slides functionality prev button removed.
   if (slideCounter > 0) {
-    prevButton.style.display = "block";
+    prevButton.style.display = "block"; //is displayed
   } else {
-    prevButton.style.display = "none";
+    prevButton.style.display = "none"; // not displayed
   }
 
   slides.forEach(function (slide) {
     slide.style.transform = `translateX(-${slideCounter * 100}%)`;
-  });
+  }); // move in X direction - (-) negative move to left
 }
 prevButton.style.display = "none";
 
-// Likes Conter - Thumbs up/down My Projects Page
+// Likes Counter - Thumbs up/down My Projects Page  - START
 
 const thumbsDown = document.querySelector(".fa-thumbs-down");
 const thumbsUp = document.querySelector(".fa-thumbs-up");
@@ -55,15 +57,15 @@ let count = 0;
 thumbsUp.addEventListener("click", () => likes());
 thumbsDown.addEventListener("click", () => dislikes());
 
-function likes() {
+const likes = () => {
   count += 1; // add one to count
   numOfLikes.textContent = count;
-}
+};
 
-function dislikes() {
+const dislikes = () => {
   count -= 1; // minus one from count
   numOfLikes.textContent = count;
-}
+};
 
 // Comment Box My Projects Page - START
 

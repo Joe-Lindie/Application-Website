@@ -110,6 +110,10 @@ header {
   align-items: center;
 }
 
+.name {
+  font-weight: bold;
+}
+
 .Img-Joe {
   border-radius: 50%;
   width: 150px;

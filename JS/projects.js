@@ -89,7 +89,7 @@ const leaveComment = () => {
     deleteBtn.textContent = "Delete"; //button name
 
     const newContent = document.createTextNode(
-      commentBoxStr.value + ` @${new Date().toLocaleTimeString()}`
+      commentBoxStr.value + `@${new Date().toLocaleTimeString()}`
     );
     newList.prepend(newContent);
     comments.prepend(newList, deleteBtn, line);

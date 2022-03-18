@@ -114,6 +114,10 @@ header {
   font-weight: bold;
 }
 
+.quote {
+  font-style: italic;
+}
+
 .Img-Joe {
   border-radius: 50%;
   width: 150px;

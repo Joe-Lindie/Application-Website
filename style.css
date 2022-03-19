@@ -63,7 +63,11 @@ h2 {
 #nav-item.show li {
   display: flex;
   justify-content: center;
-  padding-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+#nav-item.show li:hover {
+  background-color: var(--Spare-color);
 }
 
 a {
@@ -71,22 +75,22 @@ a {
   color: var(--text-color);
 }
 
-ul li a {
-  margin-right: 1rem;
-}
-
 /*Nav Items in Hover State*/
 .nav-list a:hover {
   color: var(--hover-color);
   background-color: var(--Primary1);
-  padding: 3px 5px;
   border-radius: 1rem;
+  padding: 0.1rem;
 }
 
 /*NavBar for Desktop*/
 @media (min-width: 750px) {
   .hamburger {
     display: none;
+  }
+
+  ul li a {
+    margin-right: 1rem;
   }
 
   .nav-list ul {
@@ -116,6 +120,10 @@ header {
 
 .quote {
   font-style: italic;
+}
+
+.greet {
+  text-align: center;
 }
 
 .Img-Joe {

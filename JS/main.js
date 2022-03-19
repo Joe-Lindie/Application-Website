@@ -5,6 +5,7 @@ const navItem = document.getElementById("nav-item");
 
 hamburger.addEventListener("click", function hamburger() {
   navItem.classList.toggle("show"); //show class CSS line 62
+  //console.log(typeof navItem.classList.toggle("show"))
 });
 
 //GREET USER ON HOMEPAGE
@@ -29,7 +30,7 @@ const greetUser = () => {
   //returns number between 0 -23 representing hours
   //console.log(CurrentTime);
 
-  const introSentence = `Nice to meet you. 🤝 Coding can be hard. Here's your quote of the day. 🙌 
+  const introSentence = `Nice to meet you. 🤝 Coding can be hard. Here's your positive quote of the day. 🙌 
   Click me to find out more.`;
 
   //previously used: if / else if

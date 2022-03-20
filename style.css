@@ -28,7 +28,7 @@ body {
 h1 {
   color: var(--hover-color);
   text-align: center;
-  padding: 4rem 0 2rem 0;
+  padding: 2rem 0 2rem 0;
   font-weight: 500;
 }
 
@@ -83,7 +83,7 @@ a {
   padding: 0.1rem;
 }
 
-/*NavBar for Desktop*/
+/*NavBar for Desktop View*/
 @media (min-width: 750px) {
   .hamburger {
     display: none;
@@ -106,9 +106,14 @@ a {
   #nav-item li {
     display: block;
   }
+
+  h1 {
+    padding: 4rem 0 2rem 0;
+  }
 }
 /*Homepage layout (index.html)*/
-header {
+header,
+.input_text_design {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -129,12 +134,6 @@ header {
 .Img-Joe {
   border-radius: 50%;
   width: 150px;
-}
-
-.input_text_design {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .input_text_design input {
@@ -169,7 +168,8 @@ input:focus {
 }
 
 button:hover,
-.input_text_design input:hover {
+.input_text_design input:hover,
+.thumbs-buttons {
   cursor: pointer;
   font-weight: bold;
 }
@@ -179,7 +179,6 @@ button:hover,
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
 }
 
 .thumbs-buttons .fa,

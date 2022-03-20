@@ -13,7 +13,7 @@ const input = document.getElementById("input");
 const greet = document.getElementById("greet");
 const quote = document.getElementById("quote");
 const button = document.getElementById("button");
-let anchor = document.createElement("a"); // create anchor tag
+const anchor = document.createElement("a"); // create anchor tag
 anchor.href = "whyme.html";
 
 if (button) {
@@ -30,7 +30,7 @@ const greetUser = () => {
   //returns number between 0 -23 representing hours
   //console.log(CurrentTime);
 
-  const introSentence = `Nice to meet you. 🤝 Coding can be hard. Here's your positive quote of the day. 🙌 
+  const introSentence = `Nice to meet you. 🤝 Coding can be tricky. Here's your positive quote of the day. 🙌 
   Click me to find out more.`;
 
   //previously used: if / else if

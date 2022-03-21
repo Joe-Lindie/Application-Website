@@ -221,9 +221,7 @@ button:hover,
   width: 600px; /* Set size of container*/
   height: 400px;
   position: relative;
-  border: 0.5px solid gray;
   border-radius: 5px;
-  margin-top: 20px;
 }
 
 .slide {
@@ -236,8 +234,7 @@ button:hover,
 .slide img {
   object-fit: fill;
   max-width: 100%;
-  height: 400px; /* Same height as image container*/
-  opacity: 0.8;
+  height: 100%; /* Same height as image container*/
 }
 
 .Image-info {

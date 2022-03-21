@@ -46,7 +46,7 @@ function imageCarousel() {
 }
 prevButton.style.display = "none";
 
-// Likes Counter - Thumbs up/down My Projects Page  - START
+// LIKES COUNTER - THUMBS UP/DOWN MY PROJECTS PAGE  - START
 
 const thumbsDown = document.querySelector(".fa-thumbs-down");
 const thumbsUp = document.querySelector(".fa-thumbs-up");
@@ -67,7 +67,7 @@ const dislikes = () => {
   numOfLikes.textContent = count;
 };
 
-// Comment Box My Projects Page - START
+// COMMENT BOX MY PROJECTS PAGE - START
 
 const commentBoxStr = document.getElementById("comment-box");
 const commentBtn = document.getElementById("comment-button");
@@ -83,14 +83,19 @@ const leaveComment = () => {
     // if input string empty
     alert("Don't forget to write something!");
   } else {
-    const newList = document.createElement("li"); //new list
+    const newList = document.createElement("div"); //new div
     const line = document.createElement("hr"); // new line
     const deleteBtn = document.createElement("button"); //new button
-    deleteBtn.textContent = "Delete"; //button name
+    deleteBtn.innerText = "Delete"; //button name
 
     const newContent = document.createTextNode(
-      commentBoxStr.value + `@${new Date().toLocaleTimeString()}`
+      commentBoxStr.value +
+        ` @ ${new Date().toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        })}`
     );
+
     newList.prepend(newContent);
     comments.prepend(newList, deleteBtn, line);
     // inserts string before first child. - opposite to appendChild() - last child

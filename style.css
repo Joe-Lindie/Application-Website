@@ -48,10 +48,13 @@ h2 {
 
 /* NavBar for Mobile*/
 
+nav {
+  background-color: var(--Spare-color);
+}
+
 .hamburger {
   cursor: pointer;
-  padding-left: 1rem;
-  padding-top: 1rem;
+  padding: 0.5rem;
 }
 
 #nav-item li {
@@ -66,10 +69,6 @@ h2 {
   padding: 0.5rem;
 }
 
-#nav-item.show li:hover {
-  background-color: var(--Spare-color);
-}
-
 a {
   text-decoration: none;
   color: var(--text-color);
@@ -78,7 +77,6 @@ a {
 /*Nav Items in Hover State*/
 .nav-list a:hover {
   color: var(--hover-color);
-  background-color: var(--Primary1);
   border-radius: 1rem;
   padding: 0.1rem;
 }
@@ -117,10 +115,6 @@ header,
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.name {
-  font-weight: bold;
 }
 
 .quote {
@@ -190,15 +184,32 @@ button:hover,
 /*All Website Buttons End*/
 
 /*Why Me Page.html*/
-
-.text-design-link {
-  padding: 0;
+.hover-color {
   color: var(--hover-color);
   font-weight: 500;
 }
 
-.text-design-link:hover {
-  text-decoration: underline;
+a.text-design-link {
+  position: relative;
+  font-weight: 500;
+}
+
+a.text-design-link:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--hover-color);
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+a.text-design-link:hover::before {
+  visibility: visible;
+  width: 100%;
+  color: var(--hover-color);
 }
 
 /*Media Query for the Why Me page - Desktop view*/

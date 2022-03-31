@@ -161,6 +161,19 @@ input:focus {
   background-color: transparent;
 }
 
+.btn-design .carousel-button-prev,
+.btn-design .carousel-button-next {
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+
+.btn-design .carousel-button-prev:hover,
+.btn-design .carousel-button-next:hover {
+  color: var(--hover-color);
+  border: 0.5px solid var(--hover-color);
+  background-color: var(--Spare-color);
+}
+
 button:hover,
 .input_text_design input:hover,
 .thumbs-buttons {
@@ -229,10 +242,17 @@ a.text-design-link:hover::before {
 
 .slider-container {
   overflow: hidden;
-  width: 600px; /* Set size of container*/
-  height: 400px;
+  width: 350px; /* Set size of container*/
+  height: 240px;
   position: relative;
-  border-radius: 5px;
+}
+
+/* Image Slider - DESKTOP VIEW*/
+@media (min-width: 500px) {
+  .slider-container {
+    width: 600px; /* Set size of container*/
+    height: 400px;
+  }
 }
 
 .slide {
@@ -248,25 +268,26 @@ a.text-design-link:hover::before {
   height: 100%; /* Same height as image container*/
 }
 
-.Image-info {
-  position: absolute;
-  bottom: 0px;
-  background-color: var(--Spare-color);
-  width: 100%;
+.Image-info-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.Image-info-container {
-  margin-bottom: 0.5rem;
+.Image-info-container .Image-info {
+  position: absolute;
+  bottom: 0;
+  background-color: var(--Spare-color);
+  opacity: 0.9;
+  width: 100%;
+  padding: 10px;
 }
+
 .Image-info-container a {
-  padding: 3px 5px;
-  margin-left: 0.5rem;
+  padding: 3px 7px;
   border-radius: 1rem;
   border: 0.5px solid var(--text-color);
-
-  cursor: pointer;
   font-size: 0.8rem;
-  color: var(--text-color);
 }
 
 .Image-info-container a:hover {
@@ -275,9 +296,11 @@ a.text-design-link:hover::before {
 }
 
 .Image-info-container p {
-  margin-left: 0.5rem;
+  margin: 0;
+  margin-bottom: 1rem;
   padding: 0;
   font-weight: bold;
+  text-align: left;
 }
 
 .comments_section {

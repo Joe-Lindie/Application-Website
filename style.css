@@ -46,69 +46,93 @@ h2 {
   text-align: center;
 }
 
-/* NavBar for Mobile*/
+h1 {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+ }
 
-nav {
-  background-color: var(--Spare-color);
-}
+ a {
+   text-decoration: none;
+   color: var(--text-color);
+ }
 
+/* NavBar for Mobile */
 .hamburger {
   cursor: pointer;
-  padding: 0.5rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
 }
 
-#nav-item li {
-  display: none;
-  /* removes li list*/
-}
-
-/* show class from JS*/
-#nav-item.show li {
-  display: flex;
-  justify-content: center;
-  padding: 0.5rem;
-}
-
-a {
-  text-decoration: none;
-  color: var(--text-color);
-}
-
-/*Nav Items in Hover State*/
-.nav-list a:hover {
-  color: var(--hover-color);
-  border-radius: 1rem;
-  padding: 0.1rem;
-}
-
+  .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: var(--Spare-color);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+  
+  .overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .overlay a {
+    padding: 8px;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .overlay a:hover, .overlay a:focus {
+    color: var(--hover-color);
+  }
+  
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 20px;
+  }
+  
 /*NavBar for Desktop View*/
 @media (min-width: 750px) {
   .hamburger {
     display: none;
   }
 
-  ul li a {
-    margin-right: 1rem;
-  }
-
-  .nav-list ul {
+  .overlay ul {
     display: flex;
     justify-content: flex-end;
-    padding: 0.5rem;
-    background-color: var(--Spare-color);
     position: fixed;
-    z-index: 100; /* sets navbar to top*/
-    width: 100%;
+    top: 0;
+    margin-top: 0;
+    background-color: var(--Spare-color);
+    z-index: 2;  /* sets navbar to top*/
+    list-style: none;
   }
 
-  #nav-item li {
-    display: block;
+  .overlay ul a {
+    font-size: 1rem;
+    padding: 8px;
   }
 
   h1 {
-    padding: 4rem 0 2rem 0;
-  }
+    padding-top: 4rem;
+   }
+
+   .overlay {
+    height: 0%;
+   }
 }
+
 /*Homepage layout (index.html)*/
 header,
 .input_text_design {
@@ -258,7 +282,7 @@ a.text-design-link:hover::before {
 .slide {
   position: absolute;
   width: 100%;
-  height: 100%;
+
   transition: all 0.5s ease-in-out;
 }
 

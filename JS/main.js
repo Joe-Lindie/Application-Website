@@ -1,11 +1,16 @@
 // FUNCTION FOR MOBILE HAMBURGER MENU
-const hamburger = document.getElementById("hamburger");
-const navItem = document.getElementById("nav-item");
-//console.log(hamburger);
+const closeNavBar = document.getElementById("myNav");
+const openNavBar = document.getElementById("myNav");
+const openBtn = document.getElementById("openBtn");
 
-hamburger.addEventListener("click", function hamburger() {
-  navItem.classList.toggle("show"); //show class CSS line 62
-  //console.log(typeof navItem.classList.toggle("show"))
+// Fn to close Navbar
+closeNavBar.addEventListener("click", function closeNav() {
+  closeNavBar.style.width = "0%";
+});
+
+// Fn to open Navbar
+openBtn.addEventListener("click", function openNav() {
+  openNavBar.style.width = "100%";
 });
 
 //GREET USER ON HOMEPAGE

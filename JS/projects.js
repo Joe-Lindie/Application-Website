@@ -84,9 +84,13 @@ const leaveComment = () => {
     alert("Don't forget to write something!");
   } else {
     const newList = document.createElement("div"); //new div
+    newList.classList.add("comment");
+
     const line = document.createElement("hr"); // new line
+
     const deleteBtn = document.createElement("button"); //new button
-    deleteBtn.innerText = "Delete"; //button name
+    deleteBtn.classList.add("delete_btn");
+    deleteBtn.innerText = "X"; //button name
 
     const newContent = document.createTextNode(
       commentBoxStr.value +

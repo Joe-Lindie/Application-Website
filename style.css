@@ -342,6 +342,12 @@ a.text-design-link:hover::before {
 .btn-design #comment-button {
   margin-bottom: 3rem;
 }
+.delete_btn {
+  font-size: 0.5rem;
+}
+.comment {
+  font-size: 1rem;
+}
 
 /*Footer Section*/
 footer {

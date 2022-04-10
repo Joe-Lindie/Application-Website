@@ -218,6 +218,10 @@ button:hover,
   font-size: 1rem;
   color: var(--text-color);
 }
+
+.footer_logo:hover {
+  color: rgb(0, 0, 0);
+}
 /*All Website Buttons End*/
 
 /*Why Me Page.html*/
@@ -226,27 +230,29 @@ button:hover,
   font-weight: 500;
 }
 
-a.text-design-link {
-  position: relative;
-  font-weight: 500;
-}
-
-a.text-design-link:before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: var(--hover-color);
-  visibility: hidden;
-  transition: all 0.3s ease-in-out;
-}
-
-a.text-design-link:hover::before {
-  visibility: visible;
-  width: 100%;
-  color: var(--hover-color);
+@media (min-width: 750px) { 
+  a.text-design-link {
+    position: relative;
+    font-weight: 500;
+  }
+  
+  a.text-design-link:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--hover-color);
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  a.text-design-link:hover::before {
+    visibility: visible;
+    width: 100%;
+    color: var(--hover-color);
+  }
 }
 
 /*Media Query for the Why Me page - Desktop view*/
@@ -282,7 +288,6 @@ a.text-design-link:hover::before {
 .slide {
   position: absolute;
   width: 100%;
-
   transition: all 0.5s ease-in-out;
 }
 

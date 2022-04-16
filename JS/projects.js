@@ -1,7 +1,7 @@
 const slides = document.querySelectorAll(".slide");
 const nextButton = document.querySelector(".carousel-button-next");
 const prevButton = document.querySelector(".carousel-button-prev");
-console.log(slides); // Gives nodelist/array of all slides(0 index)
+//console.log(slides); // Gives nodelist/array of all slides(0 index)
 
 slides.forEach(function (slide, index) {
   slide.style.left = `${index * 100}%`;
@@ -48,24 +48,70 @@ prevButton.style.display = "none";
 
 // LIKES COUNTER - THUMBS UP/DOWN MY PROJECTS PAGE  - START
 
-const thumbsDown = document.querySelector(".fa-thumbs-down");
-const thumbsUp = document.querySelector(".fa-thumbs-up");
+const thumbsDown = document.querySelectorAll(".fa-thumbs-down");
+const thumbsUp = document.querySelectorAll(".fa-thumbs-up");
 const numOfLikes = document.querySelector(".num-of-likes");
+const numOfLikes1 = document.querySelector(".num-of-likes-1");
+const numOfLikes2 = document.querySelector(".num-of-likes-2");
+const numOfLikes3 = document.querySelector(".num-of-likes-3");
+
+//console.log(thumbsDown);
+console.log(thumbsUp);
+//console.log(numOfLikes);
 
 let count = 0;
+let count1 = 0;
+let count2 = 0;
+let count3 = 0;
 
-thumbsUp.addEventListener("click", () => likes());
-thumbsDown.addEventListener("click", () => dislikes());
+for (let i = 0; i < thumbsUp.length; i++) {
+  thumbsUp[i].addEventListener("click", function likesCount() {
+    if (thumbsUp[0]) {
+      count += 1; // add one to count
+      numOfLikes.textContent = count;
+      console.log(thumbsUp[0]);
+      console.log(count);
+    }
 
-const likes = () => {
+    if (thumbsUp[1]) {
+      count1 += 1; // add one to count
+      numOfLikes1.textContent = count1;
+      console.log(thumbsUp[1]);
+      console.log(count1);
+    }
+
+    /* 
+    count2 += 1; // add one to count
+    numOfLikes2.textContent = count2;
+
+    count3 += 1; // add one to count
+    numOfLikes3.textContent = count3;
+    */
+
+    console.log("like this");
+  });
+}
+
+thumbsDown.forEach((dislike) => {
+  dislike.addEventListener("click", function dislikesCount() {
+    count -= 1; // minus one from count
+
+    console.log("dislike this");
+  });
+});
+
+/*
+thumbsUp.addEventListener("click", () => {
   count += 1; // add one to count
   numOfLikes.textContent = count;
-};
+});
 
-const dislikes = () => {
+thumbsDown.addEventListener("click", () => {
   count -= 1; // minus one from count
   numOfLikes.textContent = count;
-};
+});
+
+*/
 
 // COMMENT BOX MY PROJECTS PAGE - START
 

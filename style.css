@@ -204,19 +204,10 @@ button:hover,
   cursor: pointer;
   font-weight: bold;
 }
-
-.thumbs-buttons,
 .btn-design {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.thumbs-buttons .fa,
-.num-of-likes {
-  padding: 0.5rem;
-  font-size: 1rem;
-  color: var(--text-color);
 }
 
 .footer_logo:hover {
@@ -330,6 +321,61 @@ button:hover,
   padding: 0;
   font-weight: bold;
   text-align: left;
+}
+
+.container_gallery {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+}
+
+.Img_container {
+  position: relative;
+}
+
+.Gallery_Img {
+  width: 20rem;
+  height: auto;
+}
+
+.gallery_overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: .2s ease;
+  background-color: var(--hover-color);
+  overflow: scroll;
+}
+
+.Img_container:hover .gallery_overlay {
+  opacity: 1;
+}
+
+.logo, 
+.thumbs-buttons {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.gallery_overlay .logo {
+  color: white;
+  font-size: 1rem;
+}
+
+.thumbs-buttons  {
+  font-size: 0.7rem;
+  padding-top: 6.5rem;
+}
+
+.thumbs-buttons  .fa-thumbs-up {
+  padding-right: 0.5rem;
 }
 
 .comments_section {

@@ -50,68 +50,41 @@ prevButton.style.display = "none";
 
 const thumbsDown = document.querySelectorAll(".fa-thumbs-down");
 const thumbsUp = document.querySelectorAll(".fa-thumbs-up");
-const numOfLikes = document.querySelector(".num-of-likes");
-const numOfLikes1 = document.querySelector(".num-of-likes-1");
-const numOfLikes2 = document.querySelector(".num-of-likes-2");
-const numOfLikes3 = document.querySelector(".num-of-likes-3");
 
-//console.log(thumbsDown);
-console.log(thumbsUp);
-//console.log(numOfLikes);
-
-let count = 0;
-let count1 = 0;
-let count2 = 0;
-let count3 = 0;
+const counts = {
+  1: 0, //First image
+  2: 0, // Second Image
+  3: 0, // Third Image
+  4: 0, // Fourth Iimage
+};
 
 for (let i = 0; i < thumbsUp.length; i++) {
-  thumbsUp[i].addEventListener("click", function likesCount() {
-    if (thumbsUp[0]) {
-      count += 1; // add one to count
-      numOfLikes.textContent = count;
-      console.log(thumbsUp[0]);
-      console.log(count);
-    }
+  thumbsUp[i].addEventListener("click", function likesCount(event) {
+    const thumbsUpButton = event.currentTarget;
+    const thumbsDiv = thumbsUpButton.parentNode;
 
-    if (thumbsUp[1]) {
-      count1 += 1; // add one to count
-      numOfLikes1.textContent = count1;
-      console.log(thumbsUp[1]);
-      console.log(count1);
-    }
+    counts[thumbsDiv.id] += 1;
 
-    /* 
-    count2 += 1; // add one to count
-    numOfLikes2.textContent = count2;
+    const numOfLikes = thumbsDiv.querySelector("h3");
+    numOfLikes.textContent = counts[thumbsDiv.id];
 
-    count3 += 1; // add one to count
-    numOfLikes3.textContent = count3;
-    */
-
-    console.log("like this");
+    //console.log("like this");
   });
 }
 
-thumbsDown.forEach((dislike) => {
-  dislike.addEventListener("click", function dislikesCount() {
-    count -= 1; // minus one from count
+for (let i = 0; i < thumbsDown.length; i++) {
+  thumbsDown[i].addEventListener("click", function likesCount(event) {
+    const thumbsDownButton = event.currentTarget;
+    const thumbsDiv = thumbsDownButton.parentNode;
 
-    console.log("dislike this");
+    counts[thumbsDiv.id] -= 1;
+
+    const numOfLikes = thumbsDiv.querySelector("h3");
+    numOfLikes.textContent = counts[thumbsDiv.id];
+
+    //console.log("like this");
   });
-});
-
-/*
-thumbsUp.addEventListener("click", () => {
-  count += 1; // add one to count
-  numOfLikes.textContent = count;
-});
-
-thumbsDown.addEventListener("click", () => {
-  count -= 1; // minus one from count
-  numOfLikes.textContent = count;
-});
-
-*/
+}
 
 // COMMENT BOX MY PROJECTS PAGE - START
 

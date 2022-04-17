@@ -331,6 +331,7 @@ justify-content: space-around;
 
 .Img_container {
   position: relative;
+  margin-bottom: 2rem;
 }
 
 .Gallery_Img {

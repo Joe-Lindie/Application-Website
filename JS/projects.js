@@ -82,7 +82,7 @@ for (let i = 0; i < thumbsDown.length; i++) {
     const numOfLikes = thumbsDiv.querySelector("h3");
     numOfLikes.textContent = counts[thumbsDiv.id];
 
-    //console.log("like this");
+    //console.log("dislike this");
   });
 }
 

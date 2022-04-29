@@ -22,8 +22,10 @@ const anchor = document.createElement("a") // create anchor tag
 anchor.href = "whyme.html"
 
 if (button) {
+  //checking if any value asigned to button
   //checks button is not null before adding eventlistener
-  // (prev error) Cannot read properties of null
+  //(prev error) Cannot read properties of null
+  //https://idiallo.com/javascript/uncaught-typeerror-cannot-read-property-of-null
   button.addEventListener("click", () => greetUser())
   button.addEventListener("click", () => quoteOfTheDay())
 }
@@ -33,7 +35,7 @@ const greetUser = () => {
   greet.appendChild(anchor)
   const currentTime = new Date().getHours()
   //returns number between 0 -23 representing hours
-  //console.log(CurrentTime);
+  //console.log(currentTime)
 
   const introSentence = `Nice to meet you. 🤝 Coding can be tricky. Here's your positive quote of the day. 🙌 
   Click me to find out more.`
@@ -63,9 +65,16 @@ const quotes = [
   ` "Nothing is impossible. The word itself says, I’m possible!" - Audrey Hepburn`,
   ` "Try to be a rainbow in someone’s cloud." - Maya Angelou `,
 ]
+
 //FUNCTION TO GENERATE RANDOM QUOTE
 const quoteOfTheDay = () => {
   let randomNumber = Math.floor(Math.random() * quotes.length)
+  //console.log(Math.floor(5.8)) // output 5 -
+  //rounds number downwards to nearest integer
+  //console.log(Math.random())
+  //returns random number between 0 - 1
+  //console.log(Math.floor(Math.random() * 10))
+  //returns random number in this range
 
   if (button.click && input.value != "") {
     quote.innerText = quotes[randomNumber]
@@ -73,7 +82,7 @@ const quoteOfTheDay = () => {
   }
 
   // clears user input (name) after btn clicked
-  if (button.click) {
+  if (button) {
     input.value = ""
   }
 }
